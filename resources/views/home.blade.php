@@ -3,12 +3,12 @@
 @section('content')
   <div class="container">
       <div class="row">
-          <pagina tamanho="7">
+          <pagina tamanho="10">
               <painel titulo="Dashboard">
                   Teste de conteúdo..
                   <div class="row">
                       <div class="col-md-4">
-                          <caixa qtd="80" titulo="Artigos" url="#" cor="orange" icone="ion ion-pie-graph"></caixa>
+                          <caixa qtd="80" titulo="Artigos" url="#teste" cor="orange" icone="ion ion-pie-graph"></caixa>
                       </div>
                       <div class="col-md-4">
                           <caixa qtd="1500" titulo="Usuários" url="#" cor="blue" icone="ion ion-person-stalker"></caixa>
