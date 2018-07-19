@@ -43039,7 +43039,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43074,22 +43074,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['titulos']
+  props: ['titulos', 'itens']
 });
 
 /***/ }),
@@ -43118,7 +43105,22 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "tbody",
+        _vm._l(_vm.itens, function(item) {
+          return _c(
+            "tr",
+            [
+              _vm._l(item, function(i) {
+                return _c("td", [_vm._v(_vm._s(i))])
+              }),
+              _vm._v(" "),
+              _vm._m(0, true)
+            ],
+            2
+          )
+        })
+      )
     ])
   ])
 }
@@ -43127,42 +43129,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tbody", [
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Título")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Descrição")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Autor")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Data")]),
-        _vm._v(" "),
-        _c("td", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
-          _vm._v(" | "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
-        ])
-      ])
+    return _c("td", [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Editar")]),
+      _vm._v(" | "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Deletar")])
     ])
   }
 ]

@@ -9,26 +9,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Título</td>
-        <td>Descrição</td>
-        <td>Autor</td>
-        <td>Data</td>
+      <tr v-for="item of itens">
+        <td v-for="i of item">{{i}}</td>
         <td>
           <a href="#">Editar</a> | <a href="#">Deletar</a>
         </td>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>Título</td>
-        <td>Descrição</td>
-        <td>Autor</td>
-        <td>Data</td>
-        <td>
-          <a href="#">Editar</a> | <a href="#">Deletar</a>
-        </td>
-      </tr>
+
       </tbody>
     </table>
   </div>
@@ -37,7 +24,7 @@
 
 <script>
   export default {
-    props:['titulos'],
+    props:['titulos','itens'],
   }
 </script>
 
