@@ -9,7 +9,7 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th v-for="titulo of titulos">{{titulo}}</th>
+          <th style="cursor: pointer;" @click="ordenaColuna(index)" v-for="(titulo,index) of titulos">{{titulo}}</th>
           <th v-if="detalhe || editar || deletar">Ação</th>
         </tr>
       </thead>
@@ -48,6 +48,8 @@
   export default {
     props:[ 'titulos',
             'itens',
+            'ordem',
+            'ordemCol',
             'criar',
             'detalhe',
             'editar',
@@ -62,17 +64,44 @@
     methods:{
       executaForm: function (index) {
         document.getElementById(index).submit();
+      },
+      ordenaColuna: function(coluna) {
+        this.ordemCol = coluna;
+        if(this.ordem.toLowerCase() === 'asc')
+          this.ordem = 'desc';
+        else
+          this.ordem = 'asc';
       }
     },
     computed:{
       lista: function() {
-        let busca = "php";
+
+        let ordem = this.ordem || "asc",
+            ordemCol = this.ordemCol || 0;
+        ordem = ordem.toLowerCase();
+        ordemCol = parseInt(ordemCol);
+
+        if(ordem === "asc"){
+          this.itens.sort(function(a,b){
+            if (a[ordemCol] > b[ordemCol]) {return 1;}
+            if (a[ordemCol] < b[ordemCol]) {return -1;}
+            return 0;
+          });
+        } else {
+          this.itens.sort(function (a, b) {
+            if (a[ordemCol] < b[ordemCol]) {return 1;}
+            if (a[ordemCol] > b[ordemCol]) {return -1;}
+            return 0;
+          });
+        }
+
         return this.itens.filter(res => {
-
-          return true;
+          for(let k = 0; k < res.length; k++) {
+            if((res[k]).toLowerCase().indexOf(this.buscar.toLowerCase()) >= 0)
+              return true;
+          }
+          return false;
         });
-
-
         return this.itens;
       }
     }

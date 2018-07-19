@@ -5,7 +5,8 @@
         <painel titulo="Lista de Artigos">
             <tabela-lista
                 :titulos="['#','Título','Descrição','Data']"
-                :itens="[[1,'PHP OO','Curso de PHP OO','01/01/2018'],[2,'Vue JS','Curso de Vue JS','23/10/2017']]"
+                :itens="[['1','PHP OO','Curso de PHP OO','01/01/2018'],['2','Vue JS','Curso de Vue JS','23/10/2017']]"
+                ordem="desc" ordemCol="1"
                 criar="#criar"
                 detalhe="#detalhe"
                 editar="#editar"
