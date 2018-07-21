@@ -49,7 +49,7 @@
     props:[ 'titulos',
             'itens',
             'ordem',
-            'ordemCol',
+            'ordemcol',
             'criar',
             'detalhe',
             'editar',
@@ -58,7 +58,9 @@
     ],
     data: function() {
       return {
-        buscar:''
+        buscar:'',
+        ordemAux: this.ordem || "asc",
+        ordemAuxcol: this.ordemcol || 0
       }
     },
     methods:{
@@ -66,31 +68,31 @@
         document.getElementById(index).submit();
       },
       ordenaColuna: function(coluna) {
-        this.ordemCol = coluna;
-        if(this.ordem.toLowerCase() === 'asc')
-          this.ordem = 'desc';
+        this.ordemAuxcol = coluna;
+        if(this.ordemAux.toLowerCase() === 'asc')
+          this.ordemAux = 'desc';
         else
-          this.ordem = 'asc';
+          this.ordemAux = 'asc';
       }
     },
     computed:{
       lista: function() {
 
-        let ordem = this.ordem || "asc",
-            ordemCol = this.ordemCol || 0;
+        let ordem = this.ordemAux,
+            ordemcol = this.ordemAuxcol;
         ordem = ordem.toLowerCase();
-        ordemCol = parseInt(ordemCol);
+        ordemcol = parseInt(ordemcol);
 
         if(ordem === "asc"){
           this.itens.sort(function(a,b){
-            if (a[ordemCol] > b[ordemCol]) {return 1;}
-            if (a[ordemCol] < b[ordemCol]) {return -1;}
+            if (a[ordemcol] > b[ordemcol]) {return 1;}
+            if (a[ordemcol] < b[ordemcol]) {return -1;}
             return 0;
           });
         } else {
           this.itens.sort(function (a, b) {
-            if (a[ordemCol] < b[ordemCol]) {return 1;}
-            if (a[ordemCol] > b[ordemCol]) {return -1;}
+            if (a[ordemcol] < b[ordemcol]) {return 1;}
+            if (a[ordemcol] > b[ordemcol]) {return -1;}
             return 0;
           });
         }
@@ -102,7 +104,6 @@
           }
           return false;
         });
-        return this.itens;
       }
     }
   }
