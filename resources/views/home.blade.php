@@ -5,7 +5,7 @@
       <div class="row">
           <pagina tamanho="10">
               <painel titulo="Dashboard">
-                  Teste de conteúdo..
+                  <migalhas :lista="{{$listaMigalhas}}"></migalhas>
                   <div class="row">
                       <div class="col-md-4">
                           <caixa qtd="80" titulo="Artigos" url="{{route('artigos.index')}}" cor="orange" icone="ion ion-pie-graph"></caixa>
