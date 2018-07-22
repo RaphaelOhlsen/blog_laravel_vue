@@ -4,8 +4,7 @@
     <pagina tamanho="12">
         <painel titulo="Lista de Artigos">
             <migalhas :lista="{{$listaMigalhas}}"></migalhas>
-            <button type="button" class="btn btn-primary" data-toggle="modal"
-                    data-target="#meuModalTeste">Large modal</button>
+            <modallink tipo="button1" nome="meuModalTeste" titulo="Criar"></modallink>
             <tabela-lista
                 :titulos="['#','Título','Descrição','Data']"
                 :itens="[['1','PHP OO','Curso de PHP OO','01/01/2018'],['2','Vue JS','Curso de Vue JS','23/10/2017']]"
