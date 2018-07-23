@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <span>
     <button v-if="!tipo || (tipo != 'button' && tipo !='link')"
             :class="css || 'btn btn-primary'" data-toggle="modal"
             :data-target="'#' + nome">{{titulo}}</button>
@@ -7,7 +7,7 @@
             :data-target="'#' + nome">{{titulo}}</button>
     <a v-if="tipo === 'link'" href="#" :class="css || ''" data-toggle="modal"
        :data-target="'#' + nome">{{titulo}}</a>
-  </div>
+  </span>
 
 </template>
 

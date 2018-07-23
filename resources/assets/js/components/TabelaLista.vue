@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="form-inline">
-      <a v-if="criar" :href="criar">Criar</a>
+      <a v-if="criar && !modal" :href="criar">Criar</a>
+      <modallink v-if="criar && modal" tipo="link" nome="adiconar" titulo="Criar"></modallink>
+
       <div class="form-group pull-right">
         <input class="form-control" type="search" placeholder="Buscar" v-model="buscar">{{buscar}}
       </div>
@@ -22,17 +24,20 @@
               <input type="hidden" name="_token" :value="token">
 
               <a v-if="detalhe" :href="detalhe">Detalhe |</a>
-              <a v-if="editar" :href="editar"> Editar |</a>
+              <a v-if="editar && !modal" :href="editar"> Editar |</a>
+              <modallink v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |"></modallink>
               <a href="#" @click="executaForm(index)"> Deletar</a>
             </form>
             <span v-if="!token">
               <a v-if="detalhe" :href="detalhe">Detalhe |</a>
-              <a v-if="editar" :href="editar"> Editar |</a>
+              <a v-if="editar && !modal" :href="editar"> Editar |</a>
+              <modallink v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |"></modallink>
               <a v-if="deletar" :href="deletar"> Deletar</a>
             </span>
             <span v-if="token && !deletar">
               <a v-if="detalhe" :href="detalhe">Detalhe |</a>
-              <a v-if="editar" :href="editar"> Editar |</a>
+              <a v-if="editar && !modal" :href="editar"> Editar</a>
+              <modallink v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar"></modallink>
             </span>
 
           </td>
@@ -54,7 +59,8 @@
             'detalhe',
             'editar',
             'deletar',
-            'token'
+            'token',
+            'modal'
     ],
     data: function() {
       return {
