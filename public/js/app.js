@@ -43300,6 +43300,7 @@ var render = function() {
                             _vm.detalhe && _vm.modal
                               ? _c("modallink", {
                                   attrs: {
+                                    item: item,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: "Detalhe |"
@@ -43354,6 +43355,7 @@ var render = function() {
                             _vm.detalhe && _vm.modal
                               ? _c("modallink", {
                                   attrs: {
+                                    item: item,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: "Detalhe |"
@@ -43400,6 +43402,7 @@ var render = function() {
                             _vm.detalhe && _vm.modal
                               ? _c("modallink", {
                                   attrs: {
+                                    item: item,
                                     tipo: "link",
                                     nome: "detalhe",
                                     titulo: "Detalhe |"

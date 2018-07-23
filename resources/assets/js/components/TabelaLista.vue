@@ -24,21 +24,21 @@
               <input type="hidden" name="_token" :value="token">
 
               <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-              <modallink v-if="detalhe && modal" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
+              <modallink v-if="detalhe && modal" :item="item" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
               <a v-if="editar && !modal" :href="editar"> Editar |</a>
               <modallink v-if="editar && modal" :item="item"  tipo="link" nome="editar" titulo=" Editar |"></modallink>
               <a href="#" @click="executaForm(index)"> Deletar</a>
             </form>
             <span v-if="!token">
               <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-              <modallink v-if="detalhe && modal" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
+              <modallink v-if="detalhe && modal" :item="item" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
               <a v-if="editar && !modal" :href="editar"> Editar |</a>
               <modallink v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar |"></modallink>
               <a v-if="deletar" :href="deletar"> Deletar</a>
             </span>
             <span v-if="token && !deletar">
               <a v-if="detalhe && !modal" :href="detalhe">Detalhe |</a>
-              <modallink v-if="detalhe && modal" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
+              <modallink v-if="detalhe && modal" :item="item" tipo="link" nome="detalhe" titulo="Detalhe |"></modallink>
               <a v-if="editar && !modal" :href="editar"> Editar</a>
               <modallink v-if="editar && modal" tipo="link" nome="editar" titulo=" Editar"></modallink>
             </span>

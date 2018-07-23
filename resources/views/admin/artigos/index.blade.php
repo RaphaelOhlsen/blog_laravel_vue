@@ -48,18 +48,8 @@
     </modal>
 
     <modal nome="detalhe">
-        <painel titulo="Detalhe">
-            <formulario css="" action="#" method="put" enctype="multipart/form-data" token="12345">
-                <div class="form-group">
-                    <label for="Titulo">Titulo</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
-                </div>
-                <button class="btn btn-info">Atualizar</button>
-            </formulario>
+        <painel :titulo="$store.state.item.titulo">
+            <p>@{{$store.state.item.descricao}}</p>
         </painel>
     </modal>
 @endsection
