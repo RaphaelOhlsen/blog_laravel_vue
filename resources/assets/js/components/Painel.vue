@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="defineCor">
+  <div :class="defineCor">
       <div class="panel-heading">{{titulo}}</div>
 
       <div class="panel-body">

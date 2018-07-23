@@ -43029,7 +43029,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43040,6 +43040,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -43173,7 +43176,7 @@ var render = function() {
         _vm._v(" "),
         _vm.criar && _vm.modal
           ? _c("modallink", {
-              attrs: { tipo: "link", nome: "adiconar", titulo: "Criar" }
+              attrs: { tipo: "link", nome: "adicionar", titulo: "Criar" }
             })
           : _vm._e(),
         _vm._v(" "),
@@ -43269,10 +43272,20 @@ var render = function() {
                               domProps: { value: _vm.token }
                             }),
                             _vm._v(" "),
-                            _vm.detalhe
+                            _vm.detalhe && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detalhe } }, [
                                   _vm._v("Detalhe |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detalhe && _vm.modal
+                              ? _c("modallink", {
+                                  attrs: {
+                                    tipo: "link",
+                                    nome: "detalhe",
+                                    titulo: "Detalhe |"
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.editar && !_vm.modal
@@ -43312,10 +43325,20 @@ var render = function() {
                       ? _c(
                           "span",
                           [
-                            _vm.detalhe
+                            _vm.detalhe && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detalhe } }, [
                                   _vm._v("Detalhe |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detalhe && _vm.modal
+                              ? _c("modallink", {
+                                  attrs: {
+                                    tipo: "link",
+                                    nome: "detalhe",
+                                    titulo: "Detalhe |"
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.editar && !_vm.modal
@@ -43348,10 +43371,20 @@ var render = function() {
                       ? _c(
                           "span",
                           [
-                            _vm.detalhe
+                            _vm.detalhe && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detalhe } }, [
                                   _vm._v("Detalhe |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detalhe && _vm.modal
+                              ? _c("modallink", {
+                                  attrs: {
+                                    tipo: "link",
+                                    nome: "detalhe",
+                                    titulo: "Detalhe |"
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.editar && !_vm.modal

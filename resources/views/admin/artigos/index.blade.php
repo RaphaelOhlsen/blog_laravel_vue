@@ -42,13 +42,13 @@
                     <label for="descricao">Descrição</label>
                     <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
                 </div>
-                <button class="btn btn-info">Adicionar</button>
+                <button class="btn btn-info">Atualizar</button>
             </formulario>
         </painel>
     </modal>
 
-    <modal nome="editar">
-        <painel titulo="Editar">
+    <modal nome="detalhe">
+        <painel titulo="Detalhe">
             <formulario css="" action="#" method="put" enctype="multipart/form-data" token="12345">
                 <div class="form-group">
                     <label for="Titulo">Titulo</label>
