@@ -8,12 +8,28 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+
+//VUEX
+
+const store = new Vuex.Store({
+  state:{
+      itens:{teste:"working"}
+  },
+  mutations:{
+      setItens(state,obj){
+          state.itens = obj;
+      }
+  }
+});
 
 
 Vue.component('topo', require('./components/Topo.vue'));
@@ -27,5 +43,6 @@ Vue.component('modallink', require('./components/modal/ModalLink'));
 Vue.component('formulario', require('./components/Formulario'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });

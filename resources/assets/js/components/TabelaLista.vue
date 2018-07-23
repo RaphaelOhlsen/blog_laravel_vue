@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="form-inline">
+      <p>{{this.$store.state.itens}}</p>
       <a v-if="criar && !modal" :href="criar">Criar</a>
       <modallink v-if="criar && modal" tipo="link" nome="adicionar" titulo="Criar"></modallink>
 
@@ -86,6 +87,8 @@
     },
     computed:{
       lista: function() {
+
+        this.$store.commit('setItens',{opa:"texto alterado"});
 
         let ordem = this.ordemAux,
             ordemcol = this.ordemAuxcol;
