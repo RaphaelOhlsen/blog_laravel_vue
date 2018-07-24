@@ -5,7 +5,7 @@
       <modallink v-if="criar && modal" tipo="link" nome="adicionar" titulo="Criar"></modallink>
 
       <div class="form-group pull-right">
-        <input class="form-control" type="search" placeholder="Buscar" v-model="buscar">{{buscar}}
+        <input class="form-control" type="search" placeholder="Buscar" v-model="buscar">
       </div>
     </div>
     <table class="table table-striped table-hover">
@@ -108,8 +108,9 @@
 
         if(this.buscar) {
           return this.itens.filter(res => {
+            res = Object.values(res);
             for(let k = 0; k < res.length; k++) {
-              if((res[k]).toLowerCase().indexOf(this.buscar.toLowerCase()) >= 0)
+              if((res[k] + "").toLowerCase().indexOf(this.buscar.toLowerCase()) >= 0)
                 return true;
             }
             return false;
