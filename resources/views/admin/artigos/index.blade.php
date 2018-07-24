@@ -16,7 +16,7 @@
     </pagina>
 
     <modal nome="adicionar" titulo="Adicionar">
-        <formulario id="formAdicionar" css="" action="#" method="put" enctype="multipart/form-data" token="12345">
+        <formulario id="formAdicionar" css="" action="{{route('artigos.store')}}" method="post" enctype="" token="{{csrf_token()}}">
             <div class="form-group">
                 <label for="Titulo">Titulo</label>
                 <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
@@ -24,6 +24,14 @@
             <div class="form-group">
                 <label for="descricao">Descrição</label>
                 <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+            </div>
+            <div class="form-group">
+                <label for="conteudo">Conteudo</label>
+                <textarea class="form-control" name="conteudo" id="conteudo" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="datetime-local" class="form-control" id="data" name="data">
             </div>
         </formulario>
         <span slot="botoes"> <button form="formAdicionar" class="btn btn-info">Adicionar</button></span>
