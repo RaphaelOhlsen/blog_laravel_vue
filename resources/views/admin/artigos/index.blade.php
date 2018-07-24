@@ -19,7 +19,7 @@
                 :titulos="['#','Título','Descrição','Data']"
                 :itens="{{$listaArtigos}}"
                 ordem="desc" ordemcol="1"
-                criar="#criar" detalhe="#detalhe" editar="#editar" deletar="#deletar" token="234236457878"
+                criar="#criar" detalhe="/admin/artigos/" editar="#editar" deletar="#deletar" token="234236457878"
                 modal="sim"
             >
             </tabela-lista>
@@ -65,5 +65,6 @@
 
     <modal nome="detalhe" :titulo="$store.state.item.titulo">
         <p>@{{$store.state.item.descricao}}</p>
+        <p>@{{$store.state.item.conteudo}}</p>
     </modal>
 @endsection
