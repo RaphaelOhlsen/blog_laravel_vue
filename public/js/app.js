@@ -43323,6 +43323,7 @@ var render = function() {
                               ? _c("modallink", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar |"
@@ -43378,6 +43379,8 @@ var render = function() {
                             _vm.editar && _vm.modal
                               ? _c("modallink", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar |"
@@ -43426,6 +43429,8 @@ var render = function() {
                             _vm.editar && _vm.modal
                               ? _c("modallink", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.editar,
                                     tipo: "link",
                                     nome: "editar",
                                     titulo: " Editar"
@@ -43934,7 +43939,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       axios.get(this.url + this.item.id).then(function (res) {
-        console.log(res.data);
+        //console.log(res.data);
         _this.$store.commit('setItem', res.data);
       });
       //this.$store.commit('setItem', this.item);

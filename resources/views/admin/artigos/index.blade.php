@@ -19,7 +19,7 @@
                 :titulos="['#','Título','Descrição','Data']"
                 :itens="{{$listaArtigos}}"
                 ordem="desc" ordemcol="1"
-                criar="#criar" detalhe="/admin/artigos/" editar="#editar" deletar="#deletar" token="234236457878"
+                criar="#criar" detalhe="/admin/artigos/" editar="/admin/artigos/" deletar="#deletar" token="234236457878"
                 modal="sim"
             >
             </tabela-lista>
@@ -50,7 +50,7 @@
     </modal>
 
     <modal nome="editar" titulo="Editar">
-        <formulario id="formEditar" css="" action="#" method="put" enctype="multipart/form-data" token="12345">
+        <formulario id="formEditar" css="" :action="'/admin/artigos/' + $store.state.item.id" method="put" enctype="" token="{{csrf_token()}}">
             <div class="form-group">
                 <label for="Titulo">Titulo</label>
                 <input type="text" class="form-control" id="titulo" name="titulo" v-model="$store.state.item.titulo" placeholder="Título">
@@ -58,6 +58,14 @@
             <div class="form-group">
                 <label for="descricao">Descrição</label>
                 <input type="text" class="form-control" id="descricao" name="descricao" v-model="$store.state.item.descricao" placeholder="Descrição">
+            </div>
+            <div class="form-group">
+                <label for="conteudo">Conteudo</label>
+                <textarea class="form-control" name="conteudo" id="conteudo" v-model="$store.state.item.conteudo"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="datetime-local" class="form-control" id="data" name="data" v-model="$store.state.item.data">
             </div>
         </formulario>
         <span slot="botoes"><button form="formEditar" class="btn btn-info">Atualizar</button></span>
