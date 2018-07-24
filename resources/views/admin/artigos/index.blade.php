@@ -17,12 +17,15 @@
             <migalhas :lista="{{$listaMigalhas}}"></migalhas>
             <tabela-lista
                 :titulos="['#','Título','Descrição','Data']"
-                :itens="{{$listaArtigos}}"
+                :itens="{{json_encode($listaArtigos)}}"
                 ordem="desc" ordemcol="1"
                 criar="#criar" detalhe="/admin/artigos/" editar="/admin/artigos/" deletar="/admin/artigos/" token="{{ csrf_token() }}"
                 modal="sim"
             >
             </tabela-lista>
+            <div align="center">
+                {{$listaArtigos}}
+            </div>
         </painel>
     </pagina>
 
