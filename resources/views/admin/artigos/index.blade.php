@@ -19,7 +19,7 @@
                 :titulos="['#','Título','Descrição','Data']"
                 :itens="{{$listaArtigos}}"
                 ordem="desc" ordemcol="1"
-                criar="#criar" detalhe="/admin/artigos/" editar="/admin/artigos/" deletar="#deletar" token="234236457878"
+                criar="#criar" detalhe="/admin/artigos/" editar="/admin/artigos/" deletar="/admin/artigos/" token="{{ csrf_token() }}"
                 modal="sim"
             >
             </tabela-lista>

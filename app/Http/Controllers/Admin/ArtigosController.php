@@ -114,6 +114,7 @@ class ArtigosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Artigo::find($id)->delete();
+        return redirect()->back();
     }
 }
