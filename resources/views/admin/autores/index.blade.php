@@ -19,7 +19,7 @@
                 :titulos="['#','Nome','E-mail']"
                 :itens="{{json_encode($listaModelo)}}"
                 ordem="desc" ordemcol="1"
-                criar="#criar" detalhe="/admin/autores/" editar="/admin/autores/" deletar="/admin/autores/" token="{{ csrf_token() }}"
+                criar="#criar" detalhe="/admin/autores/" editar="/admin/autores/" token="{{ csrf_token() }}"
                 modal="sim"
             >
             </tabela-lista>
@@ -40,6 +40,13 @@
                 <input type="email" class="form-control" id="emailAdd" name="email" placeholder="E-mail" value="{{old('email')}}">
             </div>
             <div class="form-group">
+                <label for="autor">Autor</label>
+                <select class="form-control" name="autor" id="autorAdd">
+                    <option {{(old('autor') && old('autor') == 'N' ? 'selected' : '')}} value="N">Não</option>
+                    <option {{(old('autor') && old('autor') == 'S' ? 'selected' : '')}} {{(!old('autor') ? 'selected' : '')}} value="S">Sim</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="passwordAdd">Senha</label>
                 <input type="password" class="form-control" id="passwordAdd" name="password" placeholder="Senha" value="{{old('password')}}">
             </div>
@@ -57,6 +64,13 @@
             <div class="form-group">
                 <label for="emailEdit">E-mail</label>
                 <input type="email" class="form-control" id="emailEdit" name="email" v-model="$store.state.item.email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <label for="autor">Autor</label>
+                <select class="form-control" name="autor" id="autorEdit" v-model="$store.state.item.autor">
+                    <option value="N">Não</option>
+                    <option value="S">Sim</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="passwordEdit">Senha</label>
