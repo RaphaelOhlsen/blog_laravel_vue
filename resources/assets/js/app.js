@@ -41,6 +41,8 @@ Vue.component('migalhas', require('./components/Migalhas.vue'));
 Vue.component('modal', require('./components/modal/Modal.vue'));
 Vue.component('modallink', require('./components/modal/ModalLink'));
 Vue.component('formulario', require('./components/Formulario'));
+Vue.component('ckeditor', require('vue-ckeditor2'));
+
 
 const app = new Vue({
     el: '#app',
