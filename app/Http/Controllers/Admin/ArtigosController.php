@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Artigo;
 
@@ -20,7 +21,20 @@ class ArtigosController extends Controller
           ["titulo"=>"Lista de Artigos","url"=>""]
         ]);
 
+        /*
         $listaArtigos = Artigo::select('id','titulo','descricao','user_id','data')->paginate(5);
+
+        foreach ($listaArtigos as $key => $value) {
+          $value->user_id = \App\User::find($value->user_id)->name;
+//          $value->user_id = $value->user->name;
+//          unset($value->user);
+        }*/
+
+        $listaArtigos = DB::table('artigos')
+                        ->join('users','users.id','=','artigos.user_id')
+                        ->select('artigos.id','artigos.titulo','artigos.descricao','users.name','artigos.data')
+                        ->whereNull('deleted_at')
+                        ->paginate(5);
 
         return view('admin.artigos.index',compact('listaMigalhas','listaArtigos'));
     }
