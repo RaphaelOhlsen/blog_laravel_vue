@@ -52,8 +52,8 @@
                         ],
                         height: 200
                     }" >
-                </ckeditor>--}}
-
+                </ckeditor>
+--}}
 
             </div>
             <div class="form-group">
