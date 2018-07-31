@@ -42,6 +42,7 @@ Vue.component('modal', require('./components/modal/Modal.vue'));
 Vue.component('modallink', require('./components/modal/ModalLink'));
 Vue.component('formulario', require('./components/Formulario'));
 Vue.component('ckeditor', require('vue-ckeditor2'));
+Vue.component('artigocard', require('./components/ArtigoCard'));
 
 
 const app = new Vue({
