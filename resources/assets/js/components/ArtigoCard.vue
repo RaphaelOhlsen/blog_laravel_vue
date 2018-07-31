@@ -3,7 +3,7 @@
     <div class="thumbnail">
       <img src="https://coletiva.net/files/e4da3b7fbbce2345d7772b0674a318d5/midia_foto/20170713/118815-maior_artigo_jul17.jpg">
       <div class="caption">
-        <small>{{data}} - {{autor}}</small>
+        <small>{{data | formataData}} - {{autor}}</small>
         <h3>{{titulo}}</h3>
         <p>{{descricao}}</p>
         <p><a :href="link" class="btn btn-primary" role="button">Leia mais</a></p>
@@ -15,7 +15,14 @@
 <script>
   export default {
     name: "ArtigoCard",
-    props: ['titulo','descricao','link','imagem','data','autor','sm','md']
+    props: ['titulo','descricao','link','imagem','data','autor','sm','md'],
+    filters: {
+      formataData: function(valor) {
+        if(!valor) return '';
+        valor = valor.toString().split('-');
+        return valor[2] +  '/' + valor['1'] + '/' + valor[0];
+      }
+    }
   }
 </script>
 
